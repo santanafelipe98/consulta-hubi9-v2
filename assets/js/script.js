@@ -234,6 +234,24 @@ window.addEventListener('scroll', () => {
     }
 });
 
+window.addEventListener('beforeprint', () => {
+  const allBlinkEl = document.querySelectorAll(".blink");
+
+  allBlinkEl.forEach(blinkEl => {
+    blinkEl.classList.remove('blink');
+    blinkEl.classList.add('noblink')
+  });
+});
+
+window.addEventListener('afterprint', () => {
+  const allBlinkEl = document.querySelectorAll('.noblink');
+
+  allBlinkEl.forEach(blinkEl => {
+    blinkEl.classList.remove('noblink');
+    blinkEl.classList.add('blink');
+  });
+});
+
 btnScrollUp.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });

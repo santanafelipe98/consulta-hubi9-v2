@@ -3,6 +3,10 @@
     --color-yellow-green: #a6c72a;
 }
 
+body {
+    font-size: 12px;
+}
+
 .text-yellow-green {
     color: var(--color-yellow-green) !important;
 }
@@ -31,6 +35,13 @@
 
 .card-title-custom {
     color: var(--color-violet);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-title-custom ion-icon {
+    font-size: 24px;
 }
 
 .h-50px {
@@ -152,4 +163,17 @@
 .status-error {
     background: var(--bs-danger);
     color: white;
+}
+
+.blink {
+    animation: blink .7s ease-in-out infinite;
+}
+
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
